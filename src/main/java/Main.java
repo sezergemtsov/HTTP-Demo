@@ -27,6 +27,7 @@ public class Main {
                         new TypeReference<>() {}
                 );
                 List<Cat> sortedCats = cats.stream()
+                        .filter(x->x.getUpvotes()!=null)
                         .filter(x->x.getUpvotes()>0)
                         .toList();
                 sortedCats.forEach(System.out::println);
